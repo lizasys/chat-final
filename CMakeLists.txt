@@ -1,9 +1,11 @@
 cmake_minimum_required(VERSION 3.26)
-project(Proggetto_Labo)
+project(Progetto_Labo)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 11)
 
-add_executable(Proggetto_Labo main.cpp
+#
+#add_subdirectory(Test_Program)
+add_executable(Progetto_Labo main.cpp
         Utente.h
         Utente.cpp
         Messaggio.h
