@@ -1,0 +1,12 @@
+"C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2023.2.1/bin/ninja/win/x64/ninja.exe" -G Ninja -S C:\Users\Admin\CLionProjects\Progetto_Labo -B C:\Users\Admin\CLionProjects\Progetto_Labo\cmake-build-debug
+CMake Deprecation Warning at Test_Progetto/lib/googletest/CMakeLists.txt:53 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+-- Configuring done (1.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: C:/Users/Admin/CLionProjects/Progetto_Labo/cmake-build-debug

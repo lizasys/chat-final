@@ -1,0 +1,151 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.18"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				},
+				{
+					"build" : "Test_Progetto",
+					"childIndexes" : 
+					[
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-Test_Progetto-Debug-48bc2ee849af41abca24.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.18"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Test_Progetto",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "Test_Progetto/lib/googletest",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-Test_Progetto.lib.googletest-Debug-c01577ccd23450bf0238.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.6.4"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "Test_Progetto/lib/googletest",
+					"targetIndexes" : 
+					[
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "Progetto_Labo",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "gtest",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Progetto_Labo::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Progetto_Labo-Debug-29618a702b3eb4714d7c.json",
+					"name" : "Progetto_Labo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "core::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-core-Debug-389b21e41a66770537dc.json",
+					"name" : "core",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "gtest::@61f25ef0a6a9575d972b",
+					"jsonFile" : "target-gtest-Debug-1af114a5ce2a96d0d4d8.json",
+					"name" : "gtest",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "gtest_main::@61f25ef0a6a9575d972b",
+					"jsonFile" : "target-gtest_main-Debug-d039221be266cbf99fdf.json",
+					"name" : "gtest_main",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "runAllTests::@47d801efbab08785f0ac",
+					"jsonFile" : "target-runAllTests-Debug-c375f7341528636e3ad3.json",
+					"name" : "runAllTests",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Admin/CLionProjects/Progetto_Labo/cmake-build-debug",
+		"source" : "C:/Users/Admin/CLionProjects/Progetto_Labo"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}
