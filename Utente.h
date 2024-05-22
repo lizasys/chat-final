@@ -8,8 +8,11 @@
  using namespace std;
 class Utente {
 public:
-    Utente(const string& nome);
+   explicit Utente(const string& nome);
+
+ Utente();
     string getNome() const;
+    Utente getUtente() const;
 private:
     string nome;
 };

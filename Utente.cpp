@@ -4,6 +4,13 @@
 //
 Utente::Utente(const std::string &nome): nome(nome) {}
 
+Utente::Utente():nome("Alain") {}
+
+Utente Utente::getUtente() const {
+    return *this;
+}
+
 string Utente::getNome() const{
     return nome;
 }
+
