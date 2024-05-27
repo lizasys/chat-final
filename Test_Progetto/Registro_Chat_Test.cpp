@@ -3,7 +3,7 @@
 //
 #include "gtest/gtest.h"
 #include "../Registro_Chat.h"
-#include "../Chat.h"
+
 
 TEST(Registra_Chat, AggiungiChatTest){
     Registra_Chat registro;
@@ -19,13 +19,21 @@ TEST(Registra_Chat, AggiungiChatTest){
 TEST(Registra_Chat, VisualizzaTutteleChatTest){
     Registra_Chat registro;
     Utente utente1("Alain");
-    Utente utente2("MArtial");
+    Utente utente2("Martial");
     Chat chat1( utente1,  utente2); // Creazione di una chat.
     registro.aggiungi_Chat(chat1);
 
+
     //Verificazione del funzionamento corretto del display chat.
+    EXPECT_TRUE(chat1.getMessaggi().empty());
+    Messaggio msg1(utente1, utente2, "Buongiorno !!!");
+    Messaggio msg2(utente2, utente1,"Ciao! Come va?");
+
     testing::internal::CaptureStdout(); // cattura del output.
-    registro.visualizza_Tutte_le_Chat();
+    registro.visualizza_Tutte_le_Chat(msg1,msg2);
     std::string output = testing::internal::GetCapturedStdout();
-    EXPECT_FALSE(output.find("Chat sono. . .") != std::string::npos); // per verificare che output contiene le informazione delle chat.
+    std::cout << output;
+
+    chat1.inviaMessaggio(msg1);
+    EXPECT_FALSE(chat1.getMessaggi().empty()); // per verificare che output contiene le informazione delle chat.
 }

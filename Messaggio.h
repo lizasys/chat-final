@@ -9,8 +9,12 @@
 
 class Messaggio {
 public:
+    Messaggio(string test);
     Messaggio(const Utente& mittente,  const Utente& destinatario, const string& testo);
     string getTesto() const;
+    string getMittente(const string &mittente) const;
+    string getDestinatario( const string &destinatario) const;
+
 private:
     Utente mittente;
     Utente destinatario;

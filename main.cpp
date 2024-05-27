@@ -14,8 +14,9 @@ Utente utente1("Alain");
 Utente utente2("Martial");
 
 // Conversazione tra due utenti
-Messaggio sms1(utente1, utente2, "ciao, Martial");
-Messaggio sms2(utente2, utente1, "Ciao, Alain");
+cout<< "\nMessaggi scambiati tra Utenti:\n"<< endl;
+Messaggio sms1(utente1, utente2, "\tCiao, Martial");
+Messaggio sms2(utente2, utente1, "\tCiao, Alain");
 
 // Oggetto per l'invio dei sms
 Chat chat(utente1, utente2);
@@ -25,6 +26,6 @@ chat.inviaMessaggio(sms2);
 // Oggetto per aggiungere e visualizzare le chat
 Registra_Chat registro;
 registro.aggiungi_Chat(chat);
-registro.visualizza_Tutte_le_Chat();
+registro.visualizza_Tutte_le_Chat(sms1,sms2);
     return 0;
 }

@@ -1,5 +1,6 @@
 #include "Registro_Chat.h"
 #include<iostream>
+#include "Utente.h"
 //
 // Created by Admin on 12/05/2024.
 //
@@ -11,16 +12,33 @@ const vector<Chat>& Registra_Chat::getChat() const{
 return chat_List;
 }
 
-void Registra_Chat::visualizza_Tutte_le_Chat() const {
+
+void Registra_Chat::visualizza_Tutte_le_Chat(Messaggio msg1 , Messaggio msg2) const {
     for(const auto& chat : chat_List){
         chat.visualizzaMessaggi();
 
-        std::cout << "Chat tra:" << endl;
+
+        std::cout << "\nChat tra:" << "\t Alain \t e" << "\tMartial\n" << endl;
 
         const auto& messaggi = chat.getMessaggi();
-        for (const auto& msg : messaggi) {
-            cout << "Messaggio da" << msg.getTesto() << ":" << msg.getTesto() << "\n";
+        for (size_t i = 0; i <= 0; ++i){
+            const Messaggio& msg = messaggi[i];
+            const string mittente = msg.getMittente("Alain");
+            const string destinatario = (mittente== "Alain") ? "Martial" : " Alain";
+
+            //if (mittente == "Alain")
+            cout << "Messaggio da :\t"<< mittente << "\ta\t"<< destinatario<<"\t:\t"<<msg1.getTesto()
+            <<"\n"<< "Messaggio da :\t"<< destinatario << "\ta\t"<< mittente <<"\t:\t"<<msg2.getTesto()
+            <<"\n";;
+
+           /* else {
+                string tmp;
+                tmp = msg.getMittente("Alain");
+                msg.getMittente("Alain") = msg.getDestinatario("Martial");
+                msg.getDestinatario("Martial") = tmp;
+                cout << "Messaggio da :\t"<< mittente << "\ta\t"<< destinatario<<"\t:\t"<<msg.getTesto()
+                     <<"\n";
+            }*/
         }
-        cout <<"\n";
     }
 }

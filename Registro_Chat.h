@@ -12,7 +12,7 @@ class Registra_Chat {
 public:
     void aggiungi_Chat(const Chat& chat);
     const vector<Chat>& getChat() const;
-    void visualizza_Tutte_le_Chat() const;
+    void visualizza_Tutte_le_Chat( Messaggio msg1 , Messaggio msg2) const;
 
 private:
     vector<Chat> chat_List;
