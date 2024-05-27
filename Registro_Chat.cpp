@@ -31,14 +31,6 @@ void Registra_Chat::visualizza_Tutte_le_Chat(Messaggio msg1 , Messaggio msg2) co
             <<"\n"<< "Messaggio da :\t"<< destinatario << "\ta\t"<< mittente <<"\t:\t"<<msg2.getTesto()
             <<"\n";;
 
-           /* else {
-                string tmp;
-                tmp = msg.getMittente("Alain");
-                msg.getMittente("Alain") = msg.getDestinatario("Martial");
-                msg.getDestinatario("Martial") = tmp;
-                cout << "Messaggio da :\t"<< mittente << "\ta\t"<< destinatario<<"\t:\t"<<msg.getTesto()
-                     <<"\n";
-            }*/
         }
     }
 }
