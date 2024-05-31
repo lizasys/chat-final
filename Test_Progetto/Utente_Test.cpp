@@ -4,7 +4,7 @@
 #include "gtest/gtest.h"
 #include "../Utente.h"
 
-TEST(UtenteTest, TestClassUtente){
+TEST(UtenteTest, TestClassUtente) {
     Utente utente("Alain");
     EXPECT_EQ(utente.getNome(), "Alain");
 }

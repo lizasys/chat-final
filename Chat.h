@@ -11,10 +11,15 @@
 
 class Chat {
 public:
-    Chat(const Utente& utente1, const Utente& utente2);
-    void inviaMessaggio(const Messaggio& messaggio);
-    const vector<Messaggio>& getMessaggi() const;
+    Chat(const Utente &utente1, const Utente &utente2);
+
+    void inviaMessaggio(const Messaggio &messaggio);
+
+    const vector<Messaggio> &getMessaggi() const;
+
     void visualizzaMessaggi() const;
+
+    virtual ~Chat();
 
 
 private:
@@ -22,4 +27,5 @@ private:
     Utente utente2;
     vector<Messaggio> messaggi;
 };
+
 #endif //PROGGETTO_LABO_CHAT_H
