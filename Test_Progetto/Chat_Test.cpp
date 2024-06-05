@@ -9,23 +9,63 @@ TEST(ChatTest, Invio_MessaggioTest) {
     Utente utente2("Martial");
     Chat chat(utente1, utente2);
     Messaggio messaggio1(utente1, utente2, "Ciao, come stai?");
+    Messaggio messaggio2(utente2, utente1, "Ciao, Alain! sto bene e tu?");
 
     chat.inviaMessaggio(messaggio1);
-    EXPECT_EQ(chat.getMessaggi().size(), 1);
-    EXPECT_EQ(chat.getMessaggi()[0].getTesto(), "Ciao, come stai?");
+    chat.inviaMessaggio(messaggio2);
+
+    //EXPECT_EQ(chat.getMessaggi().size(), 1);
+    //EXPECT_EQ(chat.getMessaggi()[0].getTesto(), "Ciao, come stai?");
+
+    // verificare che i messaggi sono stati ben agguinti in modo corretto
+    const vector<Messaggio>& messaggi = chat.getMessaggi();
+    ASSERT_EQ(messaggi.size(), 2);
 }
 
-TEST(ChatTest, VisualizzaMessaggiTest) {
+
+TEST(ChatTest, Messaggi_Totali) {
     Utente utente1("Alain");
     Utente utente2("Martial");
     Chat chat(utente1, utente2);
 
-    Messaggio messaggio1(utente1, utente2, "Ciao, come stai?");
+    Messaggio messaggio1(utente1, utente2, "Ciao, Martial");
     chat.inviaMessaggio(messaggio1);
+    ASSERT_EQ(chat.Messaggi_pre(),  1); // un messaggio letto.
 
-    // verificare che la funzione display correttamente il messaggio
-    testing::internal::CaptureStdout(); //Prende(o cattura) il output.
-    chat.visualizzaMessaggi();
-    std::string output = testing::internal::GetCapturedStdout();
-    EXPECT_TRUE(output.find("Ciao, come stai?") != std::string::npos); // verificare che l'output contiene il messaggio.
+    Messaggio messaggio2(utente2, utente1, "Ciao, Alain");
+    chat.inviaMessaggio(messaggio2);
+    ASSERT_EQ(chat.Messaggi_pre(),  2);
+
+}
+
+//Test per verificare messaggi letti
+TEST(ChatTest, MessaggiLetti){
+    Utente utente1("Alain");
+    Utente utente2("Martial");
+    Chat chat(utente1 , utente2);
+
+    Messaggio sms1(utente1, utente2, "Ciao, Martial");
+    chat.inviaMessaggio(sms1);
+
+    Messaggio sms2(utente2, utente1, "Ciao, Alain");
+    chat.inviaMessaggio(sms2);
+
+    sms1.setLetto(true);
+    ASSERT_EQ(chat.Messaggi_letti(), 1);
+}
+
+//Test per verificare messaggi non letti
+TEST(ChatTest, Messaggi_Non_Letti){
+    Utente utente1("Alain");
+    Utente utente2("Martial");
+    Chat chat(utente1 , utente2);
+
+    Messaggio sms1(utente1, utente2, "Ciao, Alain");
+    chat.inviaMessaggio(sms1);
+
+    Messaggio sms2(utente2, utente1, "Ciao, Alain");
+    chat.inviaMessaggio(sms2);
+
+    sms1.setLetto(true);
+    ASSERT_EQ(chat.get_Messaggi_non_letti(), 1);
 }

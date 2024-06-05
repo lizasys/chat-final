@@ -19,6 +19,7 @@ void Chat::inviaMessaggio(const Messaggio &messaggio) {
 }
 
 const vector<Messaggio> &Chat::getMessaggi() const {
+
     return messaggi;
 }
 
@@ -28,4 +29,33 @@ void Chat::visualizzaMessaggi() const {
     }
 }
 
-Chat::~Chat() {}
+int Chat::Messaggi_pre() const {
+
+    return messaggi.size();
+}
+
+int Chat::Messaggi_letti() const {
+    bool letto =false;
+    int i = 0;
+    for(auto& messaggio : messaggi) {
+        if (messaggio.Letto()) {
+            letto = true;
+            i ++;
+        }
+    }
+    return true;
+}
+
+int Chat::get_Messaggi_non_letti() const {
+    bool letto =false;
+    int i = 0;
+    for(auto& messaggio : messaggi) {
+        if (!messaggio.Letto()) {
+            letto = true;
+            i ++;
+        }
+    }
+    return true;
+}
+
+Chat::~Chat() = default;

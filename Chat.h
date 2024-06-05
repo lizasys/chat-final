@@ -19,6 +19,13 @@ public:
 
     void visualizzaMessaggi() const;
 
+    int Messaggi_pre()  const;
+
+    int Messaggi_letti() const;
+
+    int get_Messaggi_non_letti() const;
+
+
     virtual ~Chat();
 
 

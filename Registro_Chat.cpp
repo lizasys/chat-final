@@ -19,18 +19,18 @@ void Registra_Chat::visualizza_Tutte_le_Chat(Messaggio msg1, Messaggio msg2) con
         chat.visualizzaMessaggi();
 
 
-        std::cout << "\nChat tra:" << "\t Alain \t e" << "\tMartial\n" << endl;
-
         const auto &messaggi = chat.getMessaggi();
         for (size_t i = 0; i <= 0; ++i) {
             const Messaggio &msg = messaggi[i];
             const string mittente = msg.getMittente("Alain");
             const string destinatario = (mittente == "Alain") ? "Martial" : " Alain";
 
+            std::cout << "\nChat tra:\t" << mittente<<"\t e\t"<<destinatario  << endl;
+
             //if (mittente == "Alain")
-            cout << "Messaggio da :\t" << mittente << "\ta\t" << destinatario << "\t:\t" << msg1.getTesto()
+            cout << "\nMessaggio da :\t" << mittente << "\ta\t" << destinatario << "\t:\t" << msg1.getTesto()
                  << "\n" << "Messaggio da :\t" << destinatario << "\ta\t" << mittente << "\t:\t" << msg2.getTesto()
-                 << "\n";;
+                 << "\n\n";
 
         }
     }

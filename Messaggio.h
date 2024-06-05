@@ -12,18 +12,27 @@ class Messaggio {
 public:
     Messaggio(string test);
 
+    string getTesto_Dest(Utente & destinatario);
+
     Messaggio(const Utente &mittente, const Utente &destinatario, const string &testo);
 
     string getTesto() const;
 
     string getMittente(const string &mittente) const;
 
-    string getDestinatario(const string &destinatario) const;
+    string getDestinatario(const string &destinatario) ;
+
+    bool Letto() const;
+
+    void setLetto(bool stato);
+
+
 
 private:
     Utente mittente;
     Utente destinatario;
     string testo;
+    bool letto;
 
 };
 
