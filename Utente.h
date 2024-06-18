@@ -13,7 +13,10 @@ class Utente {
 public:
     explicit Utente(const string &nome);
 
-    Utente();
+    bool operator != (const Utente& other)const;
+    bool operator == (const Utente& Other) const ;
+   friend std::ostream& operator << (std::ostream& os , const Utente& utente);
+   // friend ostream& operator >> (ostream os , const Utente utente);
 
     string getNome() const;
 

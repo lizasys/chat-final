@@ -10,22 +10,25 @@
 
 class Messaggio {
 public:
-    Messaggio(string test);
 
     string getTesto_Dest(Utente & destinatario);
 
-    Messaggio(const Utente &mittente, const Utente &destinatario, const string &testo);
+    Messaggio(const Utente &mittente, const Utente &destinatario, const char *test);
+
+    bool operator==(const Messaggio& other) const;
 
     string getTesto() const;
 
-    string getMittente(const string &mittente) const;
+    //Utente getMittente(const string &mittente) const;
+    //Utente getDestinatario(const string &destinatario) const;
 
-    string getDestinatario(const string &destinatario) ;
+    Utente getMittente() const;
+
+    Utente getDestinatario() const;
 
     bool Letto() const;
 
     void setLetto(bool stato);
-
 
 
 private:

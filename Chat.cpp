@@ -1,5 +1,6 @@
 #include "Chat.h"
 #include <iostream>
+#include<stdexcept>
 //
 // Created by Admin on 12/05/2024.
 //
@@ -15,6 +16,12 @@ Utente getUtente2(Utente utente2) {
 }
 
 void Chat::inviaMessaggio(const Messaggio &messaggio) {
+    if (messaggio.getMittente() != utente1 && messaggio.getMittente() != utente2){
+        throw out_of_range ("Il mittente non è valido");
+    }
+    if (messaggio.getDestinatario() != utente1 && messaggio.getDestinatario() != utente2){
+        throw out_of_range ("Il destinatario non è valido");
+    }
     messaggi.push_back(messaggio);
 }
 
@@ -35,11 +42,9 @@ int Chat::Messaggi_pre() const {
 }
 
 int Chat::Messaggi_letti() const {
-    bool letto =false;
     int i = 0;
     for(auto& messaggio : messaggi) {
         if (messaggio.Letto()) {
-            letto = true;
             i ++;
         }
     }
@@ -47,11 +52,9 @@ int Chat::Messaggi_letti() const {
 }
 
 int Chat::get_Messaggi_non_letti() const {
-    bool letto =false;
     int i = 0;
     for(auto& messaggio : messaggi) {
         if (!messaggio.Letto()) {
-            letto = true;
             i ++;
         }
     }

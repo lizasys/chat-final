@@ -1,32 +1,37 @@
 #include "Messaggio.h"
+#include <stdexcept>
 
 //
 // Created by Admin on 12/05/2024.
 //
-Messaggio::Messaggio(std::string test) {
-    test = testo;
-    letto = false;
 
-}
 
 string Messaggio::getTesto_Dest(Utente & destinatario){
     return testo;
 }
 
-Messaggio::Messaggio(const Utente &mittente, const Utente &destinatario, const string &testo) : mittente(mittente),
-                                                                                                destinatario(
+Messaggio::Messaggio(const Utente &mittente, const Utente &destinatario, const char *test) : mittente(mittente),
+                                                                                             destinatario(
                                                                                                         destinatario),
-                                                                                                testo(testo),letto(false){}
+                                                                                             testo(test), letto(false){
+    if (test == nullptr || test[0]== '\0')
+        throw invalid_argument("La stringa Non e' valida");
+    letto = false;
+}
+
+bool Messaggio::operator==(const Messaggio& other) const{
+    return testo == other.testo;
+};
 
 string Messaggio::getTesto() const {
     return testo;
 }
 
-string Messaggio::getMittente(const string &mittente) const {
+Utente Messaggio::getMittente() const {
     return mittente;
 }
 
-string Messaggio::getDestinatario(const string &destinatario) {
+Utente Messaggio::getDestinatario() const {
     return destinatario;
 }
 
@@ -35,7 +40,6 @@ void Messaggio::setLetto(bool stato) {
 }
 
 bool Messaggio::Letto() const {
+    if (getTesto() == testo)
     return letto;
 }
-
-

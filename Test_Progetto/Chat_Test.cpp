@@ -69,3 +69,16 @@ TEST(ChatTest, Messaggi_Non_Letti){
     sms1.setLetto(true);
     ASSERT_EQ(chat.get_Messaggi_non_letti(), 1);
 }
+
+TEST_F(ChatTest_Invio_MessaggioTest_Test, Controlo_eccessione){
+    Utente utente1("Al");
+    Utente utente2("Marx");
+
+    //Inizia una chat qua
+    Chat chat(utente1,utente2);
+
+    Messaggio messaggio (utente1, utente2,"Hello !");
+
+    // Verifica se l'eccessione e' lansciata
+    EXPECT_NO_THROW(chat.inviaMessaggio(messaggio));
+}
