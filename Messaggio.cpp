@@ -40,6 +40,5 @@ void Messaggio::setLetto(bool stato) {
 }
 
 bool Messaggio::Letto() const {
-    if (getTesto() == testo)
     return letto;
 }
