@@ -16,8 +16,8 @@ int main() {
         cerr << "Error :" << e.what() << endl;
     }
     // chaimata della classe utente con parametro
-    Utente utente1("Alain");
-    Utente utente2("Martial");
+    Utente utente1("liza");
+    Utente utente2("lince");
 
     Chat chat(utente1, utente2);
 
@@ -39,8 +39,8 @@ int main() {
 // Conversazione tra due utenti
     cout << "\nMessaggi scambiati tra Utenti:\n" << endl;
 
-    Messaggio sms1(utente1, utente2, "\tCiao, Martial");
-    Messaggio sms2(utente2, utente1, "\tCiao, Alain");
+    Messaggio sms1(utente1, utente2, "\tCiao, lince");
+    Messaggio sms2(utente2, utente1, "\tCiao, liza");
 
 
 // Oggetto per l'invio dei sms
