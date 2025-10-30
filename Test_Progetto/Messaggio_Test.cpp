@@ -4,14 +4,14 @@
 //#include "../Utente.h"
 
 TEST(MessaggioTest, TestGetSMS) {
-    Utente mittente("Alain");
-    Utente destinatario("Martial");
+    Utente mittente("liza");
+    Utente destinatario("lince");
     Messaggio messaggio(mittente, destinatario, "Ciao, come stai?");
     EXPECT_EQ(messaggio.getTesto(), "Ciao, come stai?");
 }
 
 TEST_F(MessaggioTest_TestGetSMS_Test, Lancia_Eccessione){
-    Utente mittente("Al");
+    Utente mittente("li");
     Utente destinatario("Marx");
 
     // verifica che l'eccezione sia lanciata.
