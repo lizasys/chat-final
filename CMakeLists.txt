@@ -1,13 +1,28 @@
-cmake_minimum_required(VERSION 3.18)
+cmake_minimum_required(VERSION 3.16)
 project(Progetto_Labo)
 
-set(CXX_STANDARD 11)
+# Définir la norme C++
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_subdirectory(Test_Progetto)
+# Désactiver les extensions Microsoft
+set(CMAKE_CXX_EXTENSIONS OFF)
 
-set(SOURCE_FILES Utente.cpp Messaggio.cpp Chat.cpp Registro_Chat.cpp
+# Activer les warnings
+if(MSVC)
+    add_compile_options(/W4)
+else()
+    add_compile_options(-Wall -Wextra -pedantic)
+endif()
+
+# Lister TOUS les fichiers sources
+set(SOURCE_FILES
+        main.cpp
+        Utente.cpp
+        Messaggio.cpp
+        Chat.cpp
+        Registro_Chat.cpp
 )
-add_executable(${CMAKE_PROJECT_NAME} main.cpp
-)
-add_library(core ${SOURCE_FILES})
-target_link_libraries(${CMAKE_PROJECT_NAME} core)
+
+# Créer l'exécutable avec TOUS les fichiers
+add_executable(${PROJECT_NAME} ${SOURCE_FILES})

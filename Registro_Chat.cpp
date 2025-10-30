@@ -3,9 +3,6 @@
 #include "Utente.h"
 
 
-//
-// Created by Admin on 12/05/2024.
-//
 void Registra_Chat::aggiungi_Chat(const Chat &chat) {
     chat_List.push_back(chat);
 }

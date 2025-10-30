@@ -2,9 +2,6 @@
 #include <stdexcept>
 #include <iostream>
 
-//
-// Created by Admin on 12/05/2024.
-//
 Utente::Utente(const std::string &nome) : nome(nome) {
     if (nome == "")
         throw invalid_argument ("Il nome dell'utente è vuoto");

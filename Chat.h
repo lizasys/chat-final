@@ -1,6 +1,3 @@
-//
-// Created by Admin on 12/05/2024.
-//
 
 #ifndef PROGGETTO_LABO_CHAT_H
 #define PROGGETTO_LABO_CHAT_H

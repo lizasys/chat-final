@@ -1,10 +1,6 @@
 #include "Messaggio.h"
 #include <stdexcept>
 
-//
-// Created by Admin on 12/05/2024.
-//
-
 
 string Messaggio::getTesto_Dest(Utente & destinatario){
     return testo;

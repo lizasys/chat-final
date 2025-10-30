@@ -1,6 +1,4 @@
-//
-// Created by Admin on 15/05/2024.
-//
+
 #include "gtest/gtest.h"
 #include "../Messaggio.h"
 //#include "../Utente.h"

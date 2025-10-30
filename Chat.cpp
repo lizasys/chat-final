@@ -1,9 +1,7 @@
 #include "Chat.h"
 #include <iostream>
 #include<stdexcept>
-//
-// Created by Admin on 12/05/2024.
-//
+
 
 Chat::Chat(const Utente &utente1, const Utente &utente2) : utente1(utente1), utente2(utente2) {}
 
@@ -36,12 +34,12 @@ int Chat::Messaggi_pre() const {
 
 int Chat::Messaggi_letti() const {
     int i = 0;
-    for(auto& messaggio : messaggi) {
+    for(const auto& messaggio : messaggi) {
         if (messaggio.Letto()) {
             i ++;
         }
     }
-    return true;
+    return i;
 }
 
 int Chat::get_Messaggi_non_letti() const {
