@@ -3,11 +3,11 @@
 #include "../Chat.h"
 
 TEST(ChatTest, Invio_MessaggioTest) {
-    Utente utente1("Alain");
-    Utente utente2("Martial");
+    Utente utente1("liza");
+    Utente utente2("lince");
     Chat chat(utente1, utente2);
     Messaggio messaggio1(utente1, utente2, "Ciao, come stai?");
-    Messaggio messaggio2(utente2, utente1, "Ciao, Alain! sto bene e tu?");
+    Messaggio messaggio2(utente2, utente1, "Ciao, liza! sto bene e tu?");
 
     chat.inviaMessaggio(messaggio1);
     chat.inviaMessaggio(messaggio2);
@@ -22,15 +22,15 @@ TEST(ChatTest, Invio_MessaggioTest) {
 
 
 TEST(ChatTest, Messaggi_Totali) {
-    Utente utente1("Alain");
-    Utente utente2("Martial");
+    Utente utente1("liza");
+    Utente utente2("lince");
     Chat chat(utente1, utente2);
 
-    Messaggio messaggio1(utente1, utente2, "Ciao, Martial");
+    Messaggio messaggio1(utente1, utente2, "Ciao, lince");
     chat.inviaMessaggio(messaggio1);
     ASSERT_EQ(chat.Messaggi_pre(),  1); // un messaggio letto.
 
-    Messaggio messaggio2(utente2, utente1, "Ciao, Alain");
+    Messaggio messaggio2(utente2, utente1, "Ciao, liza");
     chat.inviaMessaggio(messaggio2);
     ASSERT_EQ(chat.Messaggi_pre(),  2);
 
@@ -38,14 +38,14 @@ TEST(ChatTest, Messaggi_Totali) {
 
 //Test per verificare messaggi letti
 TEST(ChatTest, MessaggiLetti){
-    Utente utente1("Alain");
-    Utente utente2("Martial");
+    Utente utente1("liza");
+    Utente utente2("lince");
     Chat chat(utente1 , utente2);
 
-    Messaggio sms1(utente1, utente2, "Ciao, Martial");
+    Messaggio sms1(utente1, utente2, "Ciao, lince");
     chat.inviaMessaggio(sms1);
 
-    Messaggio sms2(utente2, utente1, "Ciao, Alain");
+    Messaggio sms2(utente2, utente1, "Ciao, liza");
     chat.inviaMessaggio(sms2);
 
     sms1.setLetto(true);
@@ -54,14 +54,14 @@ TEST(ChatTest, MessaggiLetti){
 
 //Test per verificare messaggi non letti
 TEST(ChatTest, Messaggi_Non_Letti){
-    Utente utente1("Alain");
-    Utente utente2("Martial");
+    Utente utente1("liza");
+    Utente utente2("lince");
     Chat chat(utente1 , utente2);
 
-    Messaggio sms1(utente1, utente2, "Ciao, Alain");
+    Messaggio sms1(utente1, utente2, "Ciao, liza");
     chat.inviaMessaggio(sms1);
 
-    Messaggio sms2(utente2, utente1, "Ciao, Alain");
+    Messaggio sms2(utente2, utente1, "Ciao, liza");
     chat.inviaMessaggio(sms2);
 
     sms1.setLetto(true);
@@ -69,7 +69,7 @@ TEST(ChatTest, Messaggi_Non_Letti){
 }
 
 TEST_F(ChatTest_Invio_MessaggioTest_Test, Controlo_eccessione){
-    Utente utente1("Al");
+    Utente utente1("li");
     Utente utente2("Marx");
 
     //Inizia una chat qua
