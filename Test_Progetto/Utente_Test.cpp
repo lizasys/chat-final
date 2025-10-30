@@ -3,8 +3,8 @@
 #include "../Utente.h"
 
 TEST(UtenteTest, TestClassUtente) {
-    Utente utente("Alain");
-    EXPECT_EQ(utente.getNome(), "Alain");
+    Utente utente("liza");
+    EXPECT_EQ(utente.getNome(), "liza");
 }
 
 TEST_F(UtenteTest_TestClassUtente_Test, Controllo_Eccessione){
