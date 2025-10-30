@@ -5,8 +5,8 @@
 
 TEST(Registra_Chat, AggiungiChatTest) {
     Registra_Chat registro;
-    Utente utente1("Alain");
-    Utente utente2("MArtial");
+    Utente utente1("liza");
+    Utente utente2("lince");
     Chat chat1(utente1, utente2);
     registro.aggiungi_Chat(chat1);
 
@@ -16,8 +16,8 @@ TEST(Registra_Chat, AggiungiChatTest) {
 
 TEST(Registra_Chat, VisualizzaTutteleChatTest) {
     Registra_Chat registro;
-    Utente utente1("Alain");
-    Utente utente2("Martial");
+    Utente utente1("liza");
+    Utente utente2("lince");
     Chat chat1(utente1, utente2); // Creazione di una chat.
     registro.aggiungi_Chat(chat1);
 
